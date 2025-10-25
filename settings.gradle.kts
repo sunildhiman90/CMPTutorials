@@ -25,6 +25,9 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+
+        // Desktop target has to add this repo for cmp webview
+        maven("https://jogamp.org/deployment/maven")
     }
 }
 

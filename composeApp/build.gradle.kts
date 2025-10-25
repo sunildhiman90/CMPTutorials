@@ -44,11 +44,7 @@ kotlin {
 
         freeCompilerArgs.addAll("-Xallow-reified-type-in-catch")
     }
-    
-    js {
-        browser()
-        binaries.executable()
-    }
+
     
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
@@ -65,6 +61,7 @@ kotlin {
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material3)
+            implementation(compose.materialIconsExtended)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
@@ -76,6 +73,9 @@ kotlin {
 
             //for using type safe navigation
             implementation(libs.navigation.compose)
+
+            // use api since the desktop app need to access the Cef to initialize it.
+            api("io.github.kevinnzou:compose-webview-multiplatform:2.0.3")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -130,6 +130,18 @@ compose.desktop {
     }
 }
 
+afterEvaluate {
+    tasks.withType<JavaExec> {
+        jvmArgs("--add-opens", "java.desktop/sun.awt=ALL-UNNAMED")
+        jvmArgs("--add-opens", "java.desktop/java.awt.peer=ALL-UNNAMED")
+
+        if (System.getProperty("os.name").contains("Mac")) {
+            jvmArgs("--add-opens", "java.desktop/sun.awt=ALL-UNNAMED")
+            jvmArgs("--add-opens", "java.desktop/sun.lwawt=ALL-UNNAMED")
+            jvmArgs("--add-opens", "java.desktop/sun.lwawt.macosx=ALL-UNNAMED")
+        }
+    }
+}
 
 buildkonfig {
     packageName = "com.sunildhiman90.cmplearnings"
