@@ -81,6 +81,20 @@ kotlin {
 
             // use api since the desktop app need to access the Cef to initialize it.
             api("io.github.kevinnzou:compose-webview-multiplatform:2.0.3")
+
+
+            //adaptive navigation -
+
+            //for material 3 window size class
+            implementation("org.jetbrains.compose.material3.adaptive:adaptive:1.2.0")
+
+
+            implementation("org.jetbrains.compose.material3.adaptive:adaptive-layout:1.2.0")
+            implementation("org.jetbrains.compose.material3.adaptive:adaptive-navigation:1.2.0")
+
+            //for navigation suite, its part of compose multiplatform
+            implementation(compose.material3AdaptiveNavigationSuite)
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
