@@ -43,11 +43,11 @@ fun WhatsNewInKotlin_2_2_20() {
     fun transform(block: () -> Int) {}
     fun transform(block: suspend () -> Int) {}
         // Fails with overload resolution ambiguity
-    transform({ 42 })
+    //transform({ 42 })
 
     // Uses an explicit cast, but the compiler incorrectly reports
     // a "No cast needed" warning
-    transform({ 42 })
+    //transform({ 42 })
     transform(suspend { 42 })
 
 
