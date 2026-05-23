@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CMPLearnings</string>
+    <string name="plus_sign">+</string>
+    <string name="delete_button_label">Delete</string>
+    <string name="apple">Apple</string>
+    <string name="banana">Banana</string>
+    <string name="grapes">Grapes</string>
+</resources>
