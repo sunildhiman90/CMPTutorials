@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">CMPLearnings</string>
-    <string name="home">Home</string>
-    <string name="search">Search</string>
-    <string name="wishlist">Wishlist</string>
-    <string name="cart">Cart</string>
-    <string name="profile">Profile</string>
-</resources>
