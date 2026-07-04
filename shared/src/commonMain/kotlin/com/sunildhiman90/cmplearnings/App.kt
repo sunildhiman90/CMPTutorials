@@ -15,6 +15,7 @@ import androidx.navigation.NavController
 import com.sunildhiman90.cmplearnings.adaptiveUi.AdaptiveUiAndNavigation
 import com.sunildhiman90.cmplearnings.deeplinks.DeepLinkExampleCMP
 import com.sunildhiman90.cmplearnings.kotlin_2_2_20.WhatsNewInKotlin_2_2_20
+import com.sunildhiman90.cmplearnings.parallax.ThreeDParallaxCarouselScreen
 import com.sunildhiman90.cmplearnings.webview.CMPWebViewExample
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -31,7 +32,8 @@ fun App(onNavHostReady: suspend (NavController) -> Unit = {}) {
             },
         ) {
             Column(modifier = Modifier.padding(it).padding(horizontal = 16.dp)) {
-                LazyColumnListWithoutKeys()
+                //LazyColumnListWithoutKeys()
+                ThreeDParallaxCarouselScreen()
             }
         }
     }
